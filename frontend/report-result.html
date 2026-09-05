@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Report Results — cAIre</title>
+<style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f8fafc;color:#172033}.container{max-width:1050px;margin:45px auto;padding:20px}.card{background:white;padding:30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.05);margin-bottom:25px}table{width:100%;border-collapse:collapse;margin-top:20px}th,td{padding:14px;text-align:left;border-bottom:1px solid #e2e8f0}th{background:#f8fafc}.badge{padding:5px 10px;border-radius:20px;background:#e2e8f0;font-size:13px}.summary{background:#eff6ff;padding:20px;border-radius:10px;line-height:1.6}a{color:#2563eb;text-decoration:none}</style></head>
+<body><div class="container"><p><a href="dashboard.html">← Dashboard</a></p><div class="card"><h1>Structured Medical Report</h1><p id="filename">Source: Uploaded report</p>
+<table><thead><tr><th>Test</th><th>Value</th><th>Unit</th><th>Reference Range</th><th>Status</th><th>Source</th></tr></thead>
+<tbody><tr><td>Awaiting backend extraction</td><td>—</td><td>—</td><td>Not provided</td><td><span class="badge">Pending</span></td><td>Medical Report</td></tr></tbody></table></div>
+<div class="card"><h2>AI Summary</h2><div class="summary">The report has been selected. Connect this page to the backend extraction service to generate a summary from the actual report contents. No diagnosis or treatment recommendation is provided.</div></div></div>
+<script>const n=localStorage.getItem("caire_report_name");if(n)document.getElementById("filename").textContent="Source: "+n;</script>
+</body></html>

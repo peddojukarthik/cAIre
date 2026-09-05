@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cAIre</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      max-width: 600px;
-      margin: 80px auto;
-      padding: 0 20px;
-      color: #1a1a1a;
-    }
-    h1 { margin-bottom: 4px; }
-    .status { color: #16a34a; font-weight: 600; }
-    .pending { color: #999; }
-    code {
-      background: #f4f4f4;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.9em;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cAIre — Clinical Information Intelligence</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui,sans-serif;background:#f8fafc;color:#172033}
+nav{display:flex;justify-content:space-between;align-items:center;padding:24px 8%;background:white}
+.logo{font-size:28px;font-weight:800}.logo span{color:#2563eb}nav a{text-decoration:none;color:#334155;margin-left:25px}
+.hero{min-height:75vh;display:flex;align-items:center;justify-content:space-between;padding:70px 8%;gap:50px}
+.hero-text{max-width:650px}.tag{display:inline-block;background:#dbeafe;color:#1d4ed8;padding:8px 14px;border-radius:20px;margin-bottom:20px;font-size:14px;font-weight:600}
+h1{font-size:56px;line-height:1.1;margin-bottom:25px}h1 span{color:#2563eb}.hero p{font-size:19px;line-height:1.7;color:#64748b;margin-bottom:35px}
+.buttons a{display:inline-block;padding:14px 24px;border-radius:10px;text-decoration:none;margin-right:12px;font-weight:600}
+.primary{background:#2563eb;color:white}.secondary{background:white;color:#2563eb;border:1px solid #bfdbfe}
+.card{width:380px;background:white;padding:30px;border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.08)}
+.card h2{margin-bottom:20px}.feature{display:flex;gap:15px;margin:20px 0}.icon{width:42px;height:42px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center}
+footer{text-align:center;padding:30px;color:#64748b}@media(max-width:800px){.hero{flex-direction:column}h1{font-size:40px}.card{width:100%}}
+</style>
 </head>
 <body>
-  <h1>cAIre</h1>
-  <p>AI-powered clinical information intelligence.</p>
-  <p class="status">Backend deployed.</p>
-  <p class="pending">Registration and intake pages: coming next.</p>
-  <p>Backend health check: <code id="health">checking...</code></p>
-
-  <script>
-    fetch('/api/healthz')
-      .then(r => r.json())
-      .then(data => {
-        document.getElementById('health').textContent = JSON.stringify(data);
-      })
-      .catch(err => {
-        document.getElementById('health').textContent = 'unreachable: ' + err;
-      });
-  </script>
+<nav><div class="logo">c<span>AI</span>re</div><div><a href="register.html">Register</a><a href="intake.html">Patient Intake</a></div></nav>
+<section class="hero">
+<div class="hero-text">
+<div class="tag">AI-POWERED CLINICAL INFORMATION INTELLIGENCE</div>
+<h1>Turn scattered medical information into a <span>structured patient record.</span></h1>
+<p>cAIre organizes patient information, medical reports, laboratory values and clinical observations into a clear, reviewable format — helping users understand available information better.</p>
+<div class="buttons"><a class="primary" href="register.html">Get Started</a><a class="secondary" href="intake.html">Patient Intake</a></div>
+</div>
+<div class="card"><h2>What cAIre does</h2>
+<div class="feature"><div class="icon">👤</div><div><b>Patient Intake</b><p>Collect relevant patient information.</p></div></div>
+<div class="feature"><div class="icon">📄</div><div><b>Report Processing</b><p>Extract structured information from reports.</p></div></div>
+<div class="feature"><div class="icon">📊</div><div><b>Reference Awareness</b><p>Identify low, normal and high values.</p></div></div>
+<div class="feature"><div class="icon">🤖</div><div><b>AI Summary</b><p>Generate an understandable summary.</p></div></div>
+</div>
+</section>
+<footer>cAIre — Clinical Information Intelligence<br>For informational and organizational purposes only. Not a medical diagnosis system.</footer>
 </body>
 </html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Patient Intake — cAIre</title>
+<style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f8fafc;color:#172033}header{background:white;padding:20px 8%;border-bottom:1px solid #e2e8f0}.logo{font-size:26px;font-weight:800}.logo span{color:#2563eb}.container{max-width:850px;margin:45px auto;padding:0 20px}.card{background:white;padding:35px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.05)}.subtitle{color:#64748b;margin-bottom:30px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.full{grid-column:1/-1}label{display:block;font-weight:600;margin-bottom:7px}input,select,textarea{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-size:15px}textarea{min-height:110px;resize:vertical}button{margin-top:30px;width:100%;padding:14px;background:#2563eb;color:white;border:0;border-radius:8px;font-size:16px}.notice{background:#eff6ff;padding:15px;border-radius:8px;margin-bottom:25px;color:#1e40af}@media(max-width:700px){.grid{grid-template-columns:1fr}.full{grid-column:auto}}</style></head>
+<body><header><div class="logo">c<span>AI</span>re</div></header>
+<div class="container"><div class="card"><h1>Patient Information</h1><p class="subtitle">Provide the information available to you. You can update it later.</p>
+<div class="notice">Information entered here is provided by the user and will be distinguished from AI-extracted information.</div>
+<form id="intakeForm"><div class="grid">
+<div><label>Patient Name</label><input id="patientName" required></div><div><label>Age</label><input id="age" type="number" min="0" max="120"></div>
+<div><label>Sex</label><select id="sex"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option></select></div>
+<div><label>Blood Group</label><select id="bloodGroup"><option value="">Select</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+<div class="full"><label>Current Symptoms</label><textarea id="symptoms" placeholder="Describe symptoms reported by the patient..."></textarea></div>
+<div class="full"><label>Existing Conditions</label><textarea id="conditions" placeholder="List known conditions or previously reported conditions..."></textarea></div>
+<div class="full"><label>Allergies</label><textarea id="allergies" placeholder="List known allergies..."></textarea></div>
+<div class="full"><label>Current Medications</label><textarea id="medications" placeholder="List medications currently reported by the patient..."></textarea></div>
+<div class="full"><label>Additional Information</label><textarea id="additional" placeholder="Any other relevant information..."></textarea></div>
+</div><button>Save Patient Information</button></form></div></div>
+<script>document.getElementById("intakeForm").addEventListener("submit",e=>{e.preventDefault();const p={name:patientName.value,age:age.value,sex:sex.value,blood_group:bloodGroup.value,symptoms:symptoms.value,conditions:conditions.value,allergies:allergies.value,medications:medications.value,additional:additional.value};localStorage.setItem("caire_patient",JSON.stringify(p));location.href="dashboard.html"});</script>
+</body></html>

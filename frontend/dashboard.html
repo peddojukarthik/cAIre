@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dashboard — cAIre</title>
+<style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f8fafc;color:#172033}header{background:white;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8f0}.logo{font-size:26px;font-weight:800}.logo span{color:#2563eb}header a{text-decoration:none;color:#2563eb}.container{max-width:1100px;margin:40px auto;padding:0 20px}.welcome{margin-bottom:30px}.welcome p,.card p{color:#64748b}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.card{background:white;padding:30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,.05)}.patient{background:#eff6ff}.button{display:inline-block;margin-top:15px;padding:12px 18px;background:#2563eb;color:white;text-decoration:none;border-radius:8px}@media(max-width:700px){.grid{grid-template-columns:1fr}}</style></head>
+<body><header><div class="logo">c<span>AI</span>re</div><a href="index.html">Logout</a></header>
+<div class="container"><div class="welcome"><h1>Clinical Information Dashboard</h1><p>Organize and review the patient's available information.</p></div>
+<div class="grid">
+<div class="card patient"><h2>👤 Patient Record</h2><p>View structured patient information provided during intake.</p><a class="button" href="patient-record.html">View Patient</a></div>
+<div class="card"><h2>📄 Medical Reports</h2><p>Upload laboratory reports and medical documents for structured extraction.</p><a class="button" href="upload-report.html">Upload Report</a></div>
+<div class="card"><h2>📊 Structured Information</h2><p>Review extracted tests, values, units, reference ranges and observations.</p><a class="button" href="report-result.html">View Reports</a></div>
+<div class="card"><h2>🕒 Patient History</h2><p>Compare and review previously processed medical information.</p><a class="button" href="history.html">View History</a></div>
+</div></div></body></html>

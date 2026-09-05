@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Register — cAIre</title>
+<style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#f1f5f9;display:flex;justify-content:center;align-items:center;min-height:100vh}.container{width:420px;background:white;padding:40px;border-radius:18px;box-shadow:0 15px 40px rgba(0,0,0,.08)}h1{margin-bottom:8px}.subtitle{color:#64748b;margin-bottom:30px}label{display:block;margin-top:18px;margin-bottom:7px;font-weight:600}input{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:8px;font-size:15px}button{width:100%;margin-top:25px;padding:14px;background:#2563eb;color:white;border:0;border-radius:8px;font-size:16px;cursor:pointer}.back{display:block;margin-top:20px;text-align:center;text-decoration:none;color:#2563eb}</style></head>
+<body><div class="container"><h1>Create your account</h1><p class="subtitle">Start organizing clinical information securely.</p>
+<form id="registerForm"><label>Full Name</label><input id="name" required><label>Email</label><input id="email" type="email" required><label>Password</label><input id="password" type="password" required><button>Create Account</button></form>
+<a class="back" href="index.html">← Back to cAIre</a></div>
+<script>document.getElementById("registerForm").addEventListener("submit",e=>{e.preventDefault();location.href="intake.html"});</script>
+</body></html>
