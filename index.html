@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cAIre</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 80px auto;
+      padding: 0 20px;
+      color: #1a1a1a;
+    }
+    h1 { margin-bottom: 4px; }
+    .status { color: #16a34a; font-weight: 600; }
+    .pending { color: #999; }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h1>cAIre</h1>
+  <p>AI-powered clinical information intelligence.</p>
+  <p class="status">Backend deployed.</p>
+  <p class="pending">Registration and intake pages: coming next.</p>
+  <p>Backend health check: <code id="health">checking...</code></p>
+
+  <script>
+    fetch('/api/healthz')
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('health').textContent = JSON.stringify(data);
+      })
+      .catch(err => {
+        document.getElementById('health').textContent = 'unreachable: ' + err;
+      });
+  </script>
+</body>
+</html>

@@ -1,16 +1,16 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+ 
 from app.core.config import get_settings
-
+ 
 settings = get_settings()
-
+ 
 app = FastAPI(
     title="cAIre",
     description="AI-powered clinical information intelligence for patients.",
     version="0.1.0",
 )
-
+ 
 # CORS: restrict to the deployed frontend origin in production.
 app.add_middleware(
     CORSMiddleware,
@@ -18,9 +18,9 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["Authorization", "Content-Type"],
 )
-
-
-@app.get("/healthz")
+ 
+ 
+@app.get("/api/healthz")
 def healthz():
     return {"status": "ok"}
 
