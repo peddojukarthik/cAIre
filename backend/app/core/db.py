@@ -27,10 +27,23 @@ settings = get_settings()
 
 _db_url = (
     f"postgresql+psycopg2://{settings.db_user}:{settings.db_password}"
-    f"@{settings.db_host}:5432/{settings.db_name}?sslmode=require"
+    f"@{settings.db_host}:{settings.db_port}/{settings.db_name}?sslmode=require"
 )
 
-engine = create_engine(_db_url, pool_pre_ping=True, pool_size=5, max_overflow=10)
+# Supabase's Transaction pooler (Supavisor, port 6543) is what we connect
+# through -- Vercel serverless functions open many short-lived connections,
+# and the pooler is designed for exactly that pattern (a direct connection
+# on 5432 would exhaust Postgres's connection limit under this traffic shape).
+# PgBouncer in transaction mode doesn't support server-side prepared statement
+# caching, so we disable it here to avoid intermittent "prepared statement
+# already exists" errors.
+engine = create_engine(
+    _db_url,
+    pool_pre_ping=True,
+    pool_size=5,
+    max_overflow=10,
+    connect_args={"prepare_threshold": None},
+)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
 

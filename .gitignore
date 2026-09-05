@@ -1,0 +1,9 @@
+.signing_private_key.pem
+*.pem
+!docs/signing_public_key.pem
+.env
+.env.local
+__pycache__/
+*.pyc
+.vercel
+node_modules/

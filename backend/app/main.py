@@ -1,14 +1,9 @@
-import firebase_admin
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
 
 settings = get_settings()
-
-# Initialize Firebase Admin once at startup, using the Cloud Run service
-# account's default credentials (no key file bundled with the code).
-firebase_admin.initialize_app()
 
 app = FastAPI(
     title="cAIre",
@@ -19,7 +14,7 @@ app = FastAPI(
 # CORS: restrict to the deployed frontend origin in production.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # TODO: lock to the Cloud Run/Firebase Hosting frontend URL before deploy
+    allow_origins=["*"],  # TODO: lock to the deployed Vercel frontend URL before submission
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["Authorization", "Content-Type"],
 )

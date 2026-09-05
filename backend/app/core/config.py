@@ -30,8 +30,9 @@ class Settings(BaseSettings):
     supabase_jwt_secret: str = os.environ.get("SUPABASE_JWT_SECRET", "")
 
     db_host: str = os.environ.get("SUPABASE_DB_HOST", "")
+    db_port: str = os.environ.get("SUPABASE_DB_PORT", "6543")  # 6543 = transaction pooler, 5432 = direct
     db_name: str = os.environ.get("SUPABASE_DB_NAME", "postgres")
-    db_user: str = os.environ.get("SUPABASE_DB_USER", "postgres")
+    db_user: str = os.environ.get("SUPABASE_DB_USER", "")  # pooler format: postgres.<project-ref>
     db_password: str = os.environ.get("SUPABASE_DB_PASSWORD", "")
 
     google_ai_api_key: str = os.environ.get("GOOGLE_AI_API_KEY", "")
