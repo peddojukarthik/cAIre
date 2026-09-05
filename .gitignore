@@ -1,9 +1,10 @@
-.signing_private_key.pem
-*.pem
-!docs/signing_public_key.pem
-.env
-.env.local
 __pycache__/
+.pytest_cache/
 *.pyc
-.vercel
+.env
+.env.*
+!.env.example
+.venv/
+venv/
 node_modules/
+.DS_Store
